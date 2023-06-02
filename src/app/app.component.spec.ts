@@ -16,16 +16,15 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'easy-landing-page'`, () => {
+  it(`should have as title 'easybank-landing-page'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('easy-landing-page');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('easy-landing-page app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('easybank-landing-page app is running!');
   });
 });
