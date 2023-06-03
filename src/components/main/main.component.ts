@@ -7,6 +7,14 @@ import { Component, AfterViewInit } from "@angular/core";
 })
 export class Main implements AfterViewInit {
   ngAfterViewInit(): void {
+    const isLandscapeDevice = window.innerWidth / window.innerHeight > 1;
+
+    if (isLandscapeDevice) {
+      this.animationOnLandscapeDevices();
+    }
+  }
+
+  private animationOnLandscapeDevices() {
     const sections = document.getElementsByTagName('section');
 
     document.addEventListener('scroll', () => {
@@ -18,7 +26,7 @@ export class Main implements AfterViewInit {
     })
   }
 
-  isInViewport(element: HTMLElement) {
+  private isInViewport(element: HTMLElement) {
     const rect = element.getBoundingClientRect();
     return (
         rect.top >= 0 &&
@@ -26,5 +34,5 @@ export class Main implements AfterViewInit {
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
-}
+  }
 }
