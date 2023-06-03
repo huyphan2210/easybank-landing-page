@@ -41,3 +41,41 @@ section
 #articles
   padding-inline: 10rem
   background-color: var(--very-light-gray)
+
+
+@media screen and (max-aspect-ratio: 1)
+  #hero
+    padding-inline: 0
+    display: flex
+    flex-direction: column-reverse
+
+    .content
+      padding-inline: 2rem
+      text-align: center
+
+      h1
+        font-size: 3rem
+
+    .images
+      height: unset
+      min-height: 70vh
+
+      img
+        top: unset
+        bottom: 0
+        left: 50%
+        transform: translate(-50%)
+        width: calc(100% - 2rem)
+        height: 125%
+  @media screen and (max-width: 767px)
+     #hero
+      .content
+        padding-inline: 1.5rem
+
+        h1
+          font-size: 2rem
+
+      .images
+        min-height: 50vh
+        img
+          width: calc(100% - 1.5rem)
