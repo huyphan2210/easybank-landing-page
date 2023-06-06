@@ -1,8 +1,12 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
+
 import { Header } from "./header/header.component";
 import { Main } from "./main/main.component";
 import { Footer } from "./footer/footer.component";
+
+import { ReasonItem } from "./main/reason/reason.component";
+import { ArticleItem } from "./main/article/article.component";
 
 @NgModule({
   imports: [
@@ -11,12 +15,16 @@ import { Footer } from "./footer/footer.component";
   declarations: [
     Header,
     Main,
-    Footer
+    Footer,
+    ReasonItem,
+    ArticleItem
   ],
   exports: [
     Header,
     Main,
-    Footer
+    Footer,
+    ReasonItem,
+    ArticleItem
   ]
 })
 
