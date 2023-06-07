@@ -1,11 +1,11 @@
-import { Component, AfterViewInit, AfterViewChecked } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.sass']
 })
-export class Main implements AfterViewInit, AfterViewChecked {
+export class Main {
   reasonItems = [
     {
       reasonImageUrl: '../../../assets/images/icon-online.svg',
@@ -55,39 +55,4 @@ export class Main implements AfterViewInit, AfterViewChecked {
       articleAuthor: 'Claire Robinson'
     },
   ]
-
-  ngAfterViewInit(): void {
-    const isLandscapeDevice = window.innerWidth / window.innerHeight > 1;
-
-    if (isLandscapeDevice) {
-      this.animationOnLandscapeDevices();
-    }
-  }
-
-  private animationOnLandscapeDevices() {
-    const sections = document.getElementsByTagName('section');
-
-    document.addEventListener('scroll', () => {
-      for (let i = 0; i < sections.length; i++) {
-        if (this.isInViewport(sections[i])) {
-          sections[i].style.opacity = '1';
-        }
-      }
-    })
-  }
-
-  ngAfterViewChecked(): void {
-    const sectionHero = document.getElementsByTagName('section')[0];
-    sectionHero.style.opacity = '1';
-  }
-
-  private isInViewport(element: HTMLElement) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
 }
