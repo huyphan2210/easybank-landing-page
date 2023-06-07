@@ -18,7 +18,6 @@ export class AppComponent implements AfterViewInit {
   }
 
   private animation(element: HTMLElement) {
-    console.log(this.isInViewport(element))
     if (this.isInViewport(element)) {
       element.style.opacity = '1';
     }
