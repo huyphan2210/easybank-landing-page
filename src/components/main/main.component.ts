@@ -1,11 +1,11 @@
-import { Component, AfterViewInit } from "@angular/core";
+import { Component, AfterViewInit, AfterViewChecked } from "@angular/core";
 
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.sass']
 })
-export class Main implements AfterViewInit {
+export class Main implements AfterViewInit, AfterViewChecked {
   reasonItems = [
     {
       reasonImageUrl: '../../../assets/images/icon-online.svg',
@@ -74,6 +74,11 @@ export class Main implements AfterViewInit {
         }
       }
     })
+  }
+
+  ngAfterViewChecked(): void {
+    const sectionHero = document.getElementsByTagName('section')[0];
+    sectionHero.style.opacity = '1';
   }
 
   private isInViewport(element: HTMLElement) {

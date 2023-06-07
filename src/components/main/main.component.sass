@@ -59,17 +59,25 @@ section
     &-list
       margin-top: 5rem
       display: grid
-      grid-template-columns: repeat(4, auto)
+      grid-template-columns: repeat(4, calc(25% - 1.5rem))
       gap: 2rem
 
 #articles
   padding-inline: 10rem
+  padding-block: 5rem
   background-color: var(--very-light-gray)
+
+  h2
+    font-size: 3rem
+    font-weight: 400
+    color: var(--dark-blue)
+    margin-block: 0
 
   .article-list
     display: grid
-    grid-template-columns: repeat(4, auto)
+    grid-template-columns: repeat(4, calc(25% - 1.5rem))
     gap: 2rem
+    margin-top: 5rem
 
     &-item
       width: 100%
@@ -104,7 +112,8 @@ section
         height: 125%
 
   #reason
-    padding: 2rem
+    padding-block: 4rem
+    padding-inline: 2rem
     text-align: center
 
     h2
@@ -113,12 +122,27 @@ section
     .reason
       &-list
         margin-top: 2rem
-        grid-template-columns: repeat(2, auto)
+        grid-template-columns: repeat(2, calc(50% - 1rem))
+
+  #articles
+    padding-block: 4rem
+    padding-inline: 2rem
+
+    h2
+      font-size: 2rem
+      text-align: center
+
+    .article
+      &-list
+        margin-top: 2rem
+        grid-template-columns: repeat(2, calc(50% - 1rem))
+
 
   @media screen and (max-width: 767px)
     #hero
       .content
-        padding: 1.5rem
+        padding-block: 3rem
+        padding-inline: 1.5rem
 
         h1
           font-size: 2rem
@@ -129,7 +153,8 @@ section
           width: calc(100% - 1.5rem)
 
     #reason
-      padding: 1.5rem
+      padding-block: 3rem
+      padding-inline: 1.5rem
 
       h2
         font-size: 1.5rem
@@ -138,3 +163,17 @@ section
         &-list
           margin-top: 1.5rem
           grid-template-columns: auto
+          gap: 1.5rem
+
+    #articles
+      padding-block: 3rem
+      padding-inline: 1.5rem
+
+      h2
+        font-size: 1.5rem
+
+      .article
+        &-list
+          margin-top: 1.5rem
+          grid-template-columns: auto
+          gap: 1.5rem
