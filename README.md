@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://easybank-landing-page-mu-vert.vercel.app/)
+- Live Site URL: [Click here](https://easybank-landing-page-mu-vert.vercel.app/)
 
 ## My process
 
